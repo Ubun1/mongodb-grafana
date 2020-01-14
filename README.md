@@ -1,5 +1,28 @@
 # MongoDB datasource for Grafana
 
+## Build
+
+this is only frotend part of the datasource.
+
+from root project directory execute ```make```.
+
+this will create .zip archive with release dist.
+
+### Prerequisites
+
+Ensure nodejs installed.
+
+### Usage
+
+```sh
+$ make 
+all                                mongodb-grafana-datasource-v0.1.0
+clean                              mongodb-grafana-datasource.zip
+dist                               package.json
+grunt                              src/
+Gruntfile.js                       
+```
+
 ## Features
 Allows MongoDB to be used as a data source for Grafana by providing a proxy to convert the Grafana Data source [API](http://docs.grafana.org/plugins/developing/datasources/) into MongoDB aggregation queries
 

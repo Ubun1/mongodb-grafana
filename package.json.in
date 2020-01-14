@@ -1,13 +1,11 @@
 {
-  "name": "grafana-mongodb",
+  "name": "mongodb-grafana-datasource",
   "private": true,
-  "version": "0.8.1",
+  "version": "@VERSION@",
   "description": "",
-  "main": "server/mongodb-proxy.js",
   "scripts": {
     "build": "./node_modules/grunt-cli/bin/grunt",
-    "test": "./node_modules/grunt-cli/bin/grunt mochaTest",
-    "server": "cd dist/server && node mongodb-proxy.js"
+    "test": "./node_modules/grunt-cli/bin/grunt mochaTest"
   },
   "repository": {
     "type": "git",
