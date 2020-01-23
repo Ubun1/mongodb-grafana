@@ -4,8 +4,6 @@ version = $(shell git describe --abbrev=0 --tags 2>/dev/null || echo latest)
 update_time = $(shell date +"%m-%d-%y")
 distdir = $(tarname)-$(version)
 configs = Gruntfile.js package.json src/plugin.json
-templates_js = $(configs:.js=.js.in) 
-templates = $(templates_js:.json=.json.in)
 
 all: clean grunt dist
 
@@ -17,12 +15,12 @@ $(tarname).zip: $(distdir)
 
 $(distdir): ; mkdir -p $@
 
-$(configs): $(templates) 
+$(configs):
 	sed \
 		-e 's/@DISTDIR@/$(distdir)/g' \
 		-e 's/@UPDATE_TIME@/$(update_time)/g' \
 		-e 's/@VERSION@/$(version)/g' \
-		$@.in > $@
+	$@.in > $@
 
 grunt: $(configs) $(distdir)
 	#TODO: ensure build env
